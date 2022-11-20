@@ -7,15 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        products.put("Хлеб", 56);
-        products.put("Масло", 153);
-        products.put("Колбаса", 211);
-        products.put("Пирожок", 45);
-
-        System.out.println("В МАГАЗИНЕ В НАЛИЧИИ");
-        for (Map.Entry<String, Integer> productAndPrice : products.entrySet()) {
-            System.out.println(productAndPrice.getKey() + " за " + productAndPrice.getValue() + " руб./шт.");
-        }
+        productWindow(products); //отдельный метод для продуктовой витрины
 
         System.out.println("Введите два слова: название товара и количество. Или end");
         Scanner scanner = new Scanner(System.in);
@@ -31,5 +23,19 @@ public class Main {
         purchase.printProduct(products);
         System.out.println("ИТОГО " + purchase.sum(products));
 
+    }
+
+
+    public static HashMap<String, Integer> productWindow(HashMap<String, Integer> products) {
+        products.put("Хлеб", 56);
+        products.put("Масло", 153);
+        products.put("Колбаса", 211);
+        products.put("Пирожок", 45);
+
+        System.out.println("В МАГАЗИНЕ В НАЛИЧИИ");
+        for (Map.Entry<String, Integer> productAndPrice : products.entrySet()) {
+            System.out.println(productAndPrice.getKey() + " за " + productAndPrice.getValue() + " руб./шт.");
+        }
+        return products;
     }
 }
