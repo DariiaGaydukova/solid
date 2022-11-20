@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        productWindow(products); //отдельный метод для продуктовой витрины
+        productWindow(products); //отдельный метод для продуктовой ветрины
 
         System.out.println("Введите два слова: название товара и количество. Или end");
         Scanner scanner = new Scanner(System.in);
