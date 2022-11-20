@@ -3,9 +3,10 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+    static HashMap<String, Integer> products = new HashMap<>();
 
     public static void main(String[] args) {
-        HashMap<String, Integer> products = new HashMap<>();
+
         products.put("Хлеб", 56);
         products.put("Масло", 153);
         products.put("Колбаса", 211);
@@ -27,7 +28,8 @@ public class Main {
             int count = Integer.parseInt(parts[1]);
             purchase.addPurchase(product, count);
         }
-        long sum = purchase.sum(products);
-        System.out.println("ИТОГО: " + sum);
+        purchase.printProduct(products);
+        System.out.println("ИТОГО " + purchase.sum(products));
+
     }
 }
