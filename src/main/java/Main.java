@@ -11,6 +11,8 @@ public class Main {
 
         System.out.println("Введите два слова: название товара и количество. Или end");
         Scanner scanner = new Scanner(System.in);
+
+        ActionWithPurchase actionWithPurchase = new ActionWithPurchase(products);
         Purchase purchase = new Purchase();
         while (true) {
             String line = scanner.nextLine();
@@ -18,10 +20,10 @@ public class Main {
             String[] parts = line.split(" ");
             String product = parts[0];
             int count = Integer.parseInt(parts[1]);
-            purchase.addPurchase(product, count);
+            actionWithPurchase.addPurchase(product, count);
         }
-        purchase.printProduct(products);
-        System.out.println("ИТОГО " + purchase.sum(products));
+        actionWithPurchase.printProduct(products);
+        System.out.println("ИТОГО " + actionWithPurchase.sum(products));
 
     }
 
